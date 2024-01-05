@@ -18,9 +18,11 @@
             </tr>
             @foreach ($contents as $content)
             <tr>
-                <td>{{$content -> content_id}}</td>                <td>{{$content -> menu}}</td>
+                <td>{{$content -> content_id}}</td>
+                <td>{{$content -> menu}}</td>
                 <td>{{$content -> price}}円</td>
                 <td>{{$content -> time}}</td>
+                <td><input type="submit" value="空き日を確認"></td>
             </tr>
             @endforeach
         </table>
