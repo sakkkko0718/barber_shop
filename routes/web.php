@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/masters',[MasterController::class,'index']);
+
+Route::get('/contents',[ContentController::class,'index']);
 

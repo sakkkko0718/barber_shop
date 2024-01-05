@@ -9,5 +9,8 @@ class Master extends Model
 {
     use HasFactory;
 
-    protected $guarded = array('master_id');
+    protected $table = 'masters';
+    protected $primaryKey = 'master_id';
+
+    protected $fillable = ['master_id','type','created_at','updated_at'];
 }
