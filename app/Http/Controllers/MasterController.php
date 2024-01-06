@@ -9,6 +9,6 @@ class MasterController extends Controller
 {
     public function index(Request $request){
         $masters = Master::all();
-        return view('barder_shop.masters',['masters'=>$masters]);
+        return view('barber_shop.masters',['masters'=>$masters]);
     }
 }

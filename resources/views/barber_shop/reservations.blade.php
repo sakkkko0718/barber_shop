@@ -11,18 +11,15 @@
     <body>
         <table>
             <tr>
-                <td></td>
-                <td>メニュー</td>
-                <td>値段</td>
-                <td>目安施術時間</td>
+                <td>予約NO,</td>
+                <td>ゲストID</td>
+                <td>施術日</td>
             </tr>
-            @foreach ($contents as $content)
+            @foreach ($reservations as $reserve)
             <tr>
-                <td>{{$content -> content_id}}</td>
-                <td>{{$content -> menu}}</td>
-                <td>{{$content -> price}}円</td>
-                <td>{{$content -> time}}</td>
-                <td><input type="submit" value="空き日を確認"></td>
+                <td>{{$reserve -> reservation_id}}</td>
+                <td>{{$reserve -> guest_id}}</td>
+                <td>{{$reserve -> day}}</td>
             </tr>
             @endforeach
         </table>

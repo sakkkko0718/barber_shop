@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +23,8 @@ Route::get('/', function () {
 
 Route::get('/masters',[MasterController::class,'index']);
 
+Route::get('/guests',[GuestController::class,'index']);
+
 Route::get('/contents',[ContentController::class,'index']);
 
+Route::get('/reservations',[ReservationController::class,'index']);

@@ -11,4 +11,6 @@ class Reservation extends Model
 
     protected $table = 'reservations';
     protected $primaryKey = 'reservation_id';
+
+    protected $fillable = ['reservation_id','guest_id','day','created_at','updated_at'];
 }
