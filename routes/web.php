@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\MasterController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ReservationController;
+use App\Models\Content;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +35,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/masters',[MasterController::class,'index']);
+
+Route::get('/guests',[GuestController::class,'index']);
+
+Route::get('/contents',[ContentController::class,'index']);
+
+Route::get('/reservations',[ReservationController::class,'index']);
+Route::get('/reservations.add',[ReservationController::class,'add']);

@@ -11,15 +11,22 @@
     <body>
         <table>
             <tr>
-                <td>予約NO,</td>
+                <td>予約ID</td>
                 <td>ゲストID</td>
-                <td>施術日</td>
+                <td>お名前</td>
+                <td>メニュー</td>
+                <td>値段</td>
+                <td>目安施術時間</td>
+                {{-- <td>施術日</td> --}}
             </tr>
-            @foreach ($reservations as $reserve)
+            @foreach ($reservations as $reservation)
             <tr>
-                <td>{{$reserve -> reservation_id}}</td>
-                <td>{{$reserve -> guest_id}}</td>
-                <td>{{$reserve -> day}}</td>
+                <td>{{$reservation->reservation_id}}</td>
+                <td>{{$reservation->guest_id}}</td>
+                <td>{{$reservation->guest->name}}</td>
+                <td>{{$reservation->content->menu}}</td>
+                <td>{{$reservation->content->price}}円</td>
+                <td>{{$reservation->content->time}}</td>
             </tr>
             @endforeach
         </table>

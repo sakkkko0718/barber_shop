@@ -9,25 +9,18 @@
         <title>Document</title>
     </head>
     <body>
-        <div>以下よりお選びください</div>
         <table>
             <tr>
-                <td></td>
                 <td>メニュー</td>
                 <td>値段</td>
                 <td>目安施術時間</td>
+                {{-- <td>施術日</td> --}}
             </tr>
-            @foreach ($contents as $content)
-            @csrf
             <tr>
-                <td>{{$content->content_id}}</td>
-                <td>{{$content->menu}}</td>
-                <td>{{$content->price}}円</td>
-                <td>{{$content->time}}</td>
-                {{-- <td><input type="submit" value="空き日時を確認"></td> --}}
-                <td><input type="submit" value="追加"></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-            @endforeach
         </table>
     </body>
 </html>

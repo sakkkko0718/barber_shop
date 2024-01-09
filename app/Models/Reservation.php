@@ -13,4 +13,10 @@ class Reservation extends Model
     protected $primaryKey = 'reservation_id';
 
     protected $fillable = ['reservation_id','guest_id','day','created_at','updated_at'];
+
+    public function content(){
+        return $this->belongsToMany('App\Models\Content','reservation_content','reservation_id','content_id')
+        // ->withPivot('total_price','total_time')
+        ;
+    }
 }

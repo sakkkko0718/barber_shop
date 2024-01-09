@@ -11,4 +11,8 @@ class ReservationController extends Controller
         $reservations = Reservation::all();
         return view('barber_shop.reservations',['reservations'=>$reservations]);
     }
+
+    public function add(Request $request){
+        
+    }
 }

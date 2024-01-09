@@ -13,4 +13,8 @@ class Content extends Model
     protected $primaryKey = 'content_id';
 
     protected $fillable = ['content_id','master_id','menu','price','time','created_at','updated_at'];
+
+    public function masters(){
+        return $this->belongsTo('App\Models\Master','master_id','master_id');
+    }
 }

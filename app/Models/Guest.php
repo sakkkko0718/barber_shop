@@ -13,4 +13,8 @@ class Guest extends Model
     protected $primaryKey = 'guest_id';
 
     protected $fillable = ['guest_id','name','address','email','tel','created_at','updated_at'];
+
+    public function reservations(){
+        return $this->hasMany('App\Models\Reservation','guest_id','guest_id');
+    }
 }
