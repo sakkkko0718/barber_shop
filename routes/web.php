@@ -36,6 +36,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/top',function(){
+    return view('top');
+});
+
 Route::get('/masters',[MasterController::class,'index']);
 
 Route::get('/guests',[GuestController::class,'index']);
@@ -43,4 +47,8 @@ Route::get('/guests',[GuestController::class,'index']);
 Route::get('/contents',[ContentController::class,'index']);
 
 Route::get('/reservations',[ReservationController::class,'index']);
-Route::get('/reservations.add',[ReservationController::class,'add']);
+Route::post('/reservations.add',[ReservationController::class,'add']);
+Auth::routes();
+
+//ログイン機能
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

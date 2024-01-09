@@ -13,6 +13,6 @@ class ReservationController extends Controller
     }
 
     public function add(Request $request){
-        
+        $reservations = session('reservation');
     }
 }
