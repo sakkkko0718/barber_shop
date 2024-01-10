@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
+<html lang="ja" data-bs-theme="auto">
+  <head>
     <meta charset="utf-8">
+    <script src="../assets/js/color-modes.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Ducati</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <link rel="stylesheet" href="{{asset('css/carousel.css')}}">
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -146,8 +147,8 @@
     </div>
 
     
-<header data-bs-theme="dark">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<header data-bs-theme="white">
+  <<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #B22222;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Ducati</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,8 +171,7 @@
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+          <button type="button" class="btn btn-success">Search</button>
       </div>
     </div>
   </nav>
@@ -187,32 +187,36 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <img src="/image/top4.jpg" alt="" height="90%" width="100%">
+            <h1>ようこそ、Ducatiへ！</h1>
+            <p class="opacity-75">地元の皆さまに愛される理容室Ducatiで、あたたかい雰囲気とプロの技術で、あなたのスタイルを引き立てます。我々はただの理容室ではなく、地元ならではのアットホームな雰囲気で、お客様一人一人に心からのおもてなしを大切にしています。</p>
+            {{-- <p><a class="btn btn-lg" href="#" style="background-color: #D2691E;">Sign up today</a></p> --}}
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" style="fill: #FF7F50;"></rect>
+        </svg>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            <img src="/image/top5.jpg" alt="" height="100%" width="100%" style="object-fit: cover">
+            <h1>美髪への第一歩！</h1>
+            <p>髪の健康をサポートする理容専売のシャンプーと、スタイリング剤で、日常のお手入れを格上げしませんか？</p>
+            <p><a class="btn btn-lg" href="#" style="background-color: #D2691E; color: white;">商品のご案内</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <h1>訪問サービス承ります！</h1>
+            <p>当店はお客様のご自宅へ訪問し、快適な環境でカットさせていただくサービスを提供しています。<br>ご予約いただければ、専門の理容師がお客様の都合に合わせてお伺いいたします。</p>
+            <p><a class="btn btn-lg" href="#" style="background-color: #D2691E; color: white;">予約ページへ</a></p>
           </div>
         </div>
       </div>
@@ -235,24 +239,24 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
+    <div class="row" style="text-align: center ; margin-top: 10vh">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="/image/top7.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><title>地元らしいサービス</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">カジュアルな雰囲気</h2>
+        <p>当店はカジュアルでリラックスした雰囲気が自慢。地元の方々とのふれあいを大切にし、くつろげる空間を提供しています。</p>
+        {{-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> --}}
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="/image/top6.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <h2 class="fw-normal">季節のトレンド</h2>
+        <p>地元の季節やイベントに合わせたヘアスタイル提案で、地元のおしゃれを応援します。</p>
+        {{-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> --}}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <h2 class="fw-normal">コミュニティ参加</h2>
+        <p>地元のイベントや地域のサポート活動にも積極的に参加。当店は地元に根ざした存在として、地域社会への貢献に努めています。</p>
+        {{-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> --}}
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -263,8 +267,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">カジュアルな雰囲気<span class="text-body-secondary"></span></h2>
-        <p class="lead">Ducatiはカジュアルでリラックスした雰囲気が自慢。地元の方々とのふれあいを大切にし、くつろげる空間を提供しています。</p>
+        <h2 class="featurette-heading fw-normal lh-1">手入れのしやすいスタイル<span class="text-body-secondary"></span></h2>
+        <p class="lead">生活に合わせ、手入れがしやすく、毎日の生活にフィットするヘアスタイルをご提案します。</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Image</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><image href="/image/top1.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
@@ -275,8 +279,8 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">季節のトレンド<span class="text-body-secondary"></span></h2>
-        <p class="lead">地元の季節やイベントに合わせたヘアスタイル提案で、地元のおしゃれを応援します。</p>
+        <h2 class="featurette-heading fw-normal lh-1">丁寧なカウンセリング<span class="text-body-secondary"></span></h2>
+        <p class="lead">お客様のライフスタイルや好みに合わせた提案を心がけます。</p>
       </div>
       <div class="col-md-5 order-md-1">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Image</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><image href="/image/top2.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
@@ -299,12 +303,20 @@
 
     <!-- /END THE FEATURETTES -->
 
+    <section class="top1" id="access">
+      <div class="container">
+          <h3>Access</h3>
+          <p>【住所】〒630-1234 奈良県奇跡市花見町1-2-3
+          <p>【アクセス】<br>
+              最寄り駅: 奇跡駅（南へ徒歩10分、花見通り沿いに進みます。）
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105056.623701192!2d135.78701026203626!3d34.62894774406043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600137c578a70cc1%3A0x4afed9b0b9492622!2z5aWI6Imv55yM5aWI6Imv5biC!5e0!3m2!1sja!2sjp!4v1704860280230!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="container marketing">
+        <div style="margin: 30px 0"><p>Ducatiで、地元ならではの心地よいひとときをお楽しみください。ご予約は当サイト予約ページ、またはお電話で承っております。</p></div>
+      </div>
+  </section>
+
   </div><!-- /.container -->
-
-  <div class="container marketing">
-    <div style="margin: 30px 0"><p>Ducatiで、地元ならではの心地よいひとときをお楽しみください。<br>ご予約は当サイト予約ページ、またはお電話で承っております。</p></div>
-  </div>
-
 
   <!-- FOOTER -->
   <footer class="container">
@@ -312,7 +324,6 @@
     <p>&copy; 2017–2023 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
 </html>
