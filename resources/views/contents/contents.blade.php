@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('content')
-    <form action="/reservations.add" method="POST">
+    <form action="{{ route('addToCart')}}" method="post">
         @csrf
         <div>以下よりお選びください</div>
         <table class="table table-striped">
@@ -19,8 +19,7 @@
                         <td>{{$content->price}}円</td>
                         <td>{{$content->time}}</td>
                         <td>
-                            <input type="hidden" name="menu_id" value="{{$content->content_id}}">
-                            <input type="submit" value="追加">
+                            <a href="{{ route('showCart', ['contentId' => $content->content_id]) }}">追加</a>
                         </td>
                     </tr>
             @endforeach

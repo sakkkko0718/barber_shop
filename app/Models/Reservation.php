@@ -12,7 +12,7 @@ class Reservation extends Model
     protected $table = 'reservations';
     protected $primaryKey = 'reservation_id';
 
-    protected $fillable = ['reservation_id','guest_id','day','created_at','updated_at'];
+    protected $fillable = ['reservation_id','guest_id','day'];
 
     public function content(){
         return $this->belongsToMany('App\Models\Content','reservation_content','reservation_id','content_id')

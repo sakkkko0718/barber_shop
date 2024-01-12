@@ -12,7 +12,14 @@ class ReservationController extends Controller
         return view('barber_shop.reservations',['reservations'=>$reservations]);
     }
 
+    //ページの表示
     public function add(Request $request){
-        $reservations = session('reservation');
+        return view('reservations.add');
+    }
+
+    public function create(Request $request){
+        $cart = new Reservation();
+        $cart->fill($request->all())->save();
+        return redirect('reservations');
     }
 }
