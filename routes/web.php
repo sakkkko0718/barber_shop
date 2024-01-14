@@ -45,10 +45,10 @@ Route::get('/masters',[MasterController::class,'index']);
 Route::get('/guests',[GuestController::class,'index']);
 
 //メニュー
-Route::get('/contents', [ContentController::class, 'index']);
-Route::post('/contents/add', [ContentController::class, 'addToCart'])->name('addToCart');
-Route::get('/contents/add/{contentId}', [ContentController::class, 'showCart'])->name('showCart');
-
+Route::get('/contents', [ContentController::class, 'index'])->name('index');
+Route::get('/contents/add', [ContentController::class, 'add'])->name('contents.add');
+Route::get('/contents/add/{content_id}', [ContentController::class, 'show']);
+Route::post('/contents/add',[ContentController::class,'create'])->name('contents.create');
 //予約確認ページ（ゲストと予約の情報）
 Route::get('/reservations',[ReservationController::class,'index']);
 

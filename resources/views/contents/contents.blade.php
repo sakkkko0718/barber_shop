@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('content')
-    <form action="{{ route('addToCart')}}" method="post">
+    <form action="/contents.add" method="post">
         @csrf
         <div>以下よりお選びください</div>
         <table class="table table-striped">
@@ -19,7 +19,7 @@
                         <td>{{$content->price}}円</td>
                         <td>{{$content->time}}</td>
                         <td>
-                            <a href="{{ route('showCart', ['contentId' => $content->content_id]) }}">追加</a>
+                        <a href="{{ route('contents.add', ['content_id' => $content->content_id]) }}">追加</a>
                         </td>
                     </tr>
             @endforeach

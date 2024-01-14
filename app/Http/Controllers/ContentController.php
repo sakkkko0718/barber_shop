@@ -12,34 +12,32 @@ class ContentController extends Controller
         return view('contents/contents', ['contents' => $contents]);
     }
 
-    public function addToCart($contentId){
-        //選択されたコンテンツを追加
-        //データベースから商品データを取得
-        $content = Content::find($contentId);
-
-        //カートがなければ新しく作成
-        $cart = session()->get('cart', []);
-
-        //カートに商品を追加
-        $cart[] = [
-            'content_id' => $content->content_id,
-            'menu' => $content->menu,
-            'price' => $content->price,
-            'time' => $content->time,
-        ];
-
-        //セッションにカートのデータを保存(put)
-        session()->put('cart', $cart);
-
-        return redirect()->back()->with('success', 'カートに商品を追加しました');
+    public function add(Request $request){
+        return view('contents.add');
     }
 
-    public function showCart(Request $request){
-        //カート内のコンテンツを取得して表示
-        
-        //セッション内のデータを取得
-        $cartContents = session()->get('get',[]);
+    public function show(Request $request, $content_id){
+        // セッションにデータを保存
+        $request->session()->put('content_id', $content_id);
+    
+        // もしセッションにデータが存在すれば表示
+        if ($content_id) {
+            $contents = Content::where('content_id', $content_id)->get();
+            return view('contents.add', ['contents' => $contents]);
+        } else {
+            return redirect()->route('contents.add')->with('message', 'まだ追加していません');
+        }
+    }
 
-        return view('contents.add', ['cartContents' => $cartContents]);
+    //追加（一時保存）した後の動き(put)
+    public function create(Request $request){
+        // リクエストからデータを取得
+        $contents = $request->input('content_id');
+
+        // データをセッションに保存
+        $request->session()->put('contents', $contents);
+
+        // データの保存が完了したらリダイレクト
+        return redirect()->route('contents.add');
     }
 }
