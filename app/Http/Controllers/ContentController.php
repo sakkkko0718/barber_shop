@@ -29,13 +29,11 @@ class ContentController extends Controller
         }
     }
 
-    //追加（一時保存）した後の動き(put)
-    public function create(Request $request){
-        // リクエストからデータを取得
-        $contents = $request->input('content_id');
-
-        // データをセッションに保存
-        $request->session()->put('contents', $contents);
+    public function showCart(Request $request){
+        //カート内のコンテンツを取得して表示
+        
+        //セッション内のデータを取得
+        $cartContents = session()->get('get',[]);
 
         // データの保存が完了したらリダイレクト
         return redirect()->route('contents.add');
