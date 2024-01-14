@@ -13,7 +13,6 @@ class ReservationsTableSeeder extends Seeder
     public function run(): void
     {
         $param = [
-            //予約の内容
         ];
         //繋げるDB
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Master;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
