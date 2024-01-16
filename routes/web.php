@@ -45,12 +45,15 @@ Route::get('/masters',[MasterController::class,'index']);
 Route::get('/guests',[GuestController::class,'index']);
 
 //メニュー
-Route::get('/contents', [ContentController::class, 'index']);
+Route::get('/contents', [ContentController::class, 'index'])->name('index');
 
 Route::get('/reservations',[ReservationController::class,'index']);
 
-Route::get('reseervations/add',[ReservationController::class,'content_get'])->name('contentget');
-Route::post('reseervations/add',[ReservationController::class,'show']);
+Route::get('reservations/add/{content_id}',[ReservationController::class,'content_get'])->name('contentget');
+Route::post('reservations/add',[ReservationController::class,'show']);
+
+Route::get('reservations/add',[ReservationController::class,'add']);
+Route::post('reservations/complete',[ReservationController::class,'store'])->name('reservationsStore');
 
 Auth::routes();
 

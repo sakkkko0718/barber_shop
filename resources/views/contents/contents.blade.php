@@ -16,7 +16,7 @@
                         {{-- <form action="/reservations/add" method="post"> --}}
                         <td>{{$content->content_id}}</td>
                         <td>{{$content->menu}}</td>
-                        <td>{{$content->price}}円</td>
+                        <td>{{number_format($content->price)}}円</td>
                         <td>{{$content->time}}</td>
                         <td>
                             @csrf

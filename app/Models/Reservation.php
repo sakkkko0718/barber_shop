@@ -14,17 +14,15 @@ class Reservation extends Model
     public static $rules =array (
         'reservation_id' => 'integer',
         'guest_id' => 'integer',
-        'day' => 'data',
-        'startTime' => 'time',
+        'day' => 'required|date',
+        'startTime' => 'required',
     );
-
-    // protected $fillable = ['reservation_id','guest_id','day'];
 
     public function guest(){
         return $this->belongsTo('App\Models\Guest','guest_id','guest_id');
     }
 
     public function contents(){
-        return $this->belongsToMany('App\Models\Content', 'reservation_content', 'reservation_id', 'content_id');
+        return $this->belongsToMany('App\Models\Content', 'reservation_content', 'reservation_id', 'content_id')->withPivot('day','startTime');
     }
 }

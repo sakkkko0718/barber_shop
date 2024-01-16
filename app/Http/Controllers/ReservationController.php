@@ -13,6 +13,10 @@ class ReservationController extends Controller
         return view('reservations.reservations',['reservations'=>$reservations]);
     }
 
+    public function add(Request $request){
+        return view('reservations/add');
+    }
+
     // ↓買い物かごに１つしか入れない場合の書き方ここから↓
     public function content_get(Request $request){
         //Contentモデルからidを取得
@@ -21,6 +25,7 @@ class ReservationController extends Controller
     }
 
     public function show(Request $request){
+        //バリデーションルールの定義（モデルから）
         $this->validate($request, Reservation::$rules);
         //インスタンスを取得
         $reservation = Content::find($request->content_id);
@@ -31,4 +36,14 @@ class ReservationController extends Controller
         return redirect('reservations.add');
     }
     // ↑買い物かごに１つしか入れない場合の書き方ここまで↑
+
+    // DBへ保存処理
+    public function store(Request $request){
+        //バリデーションルールの定義（モデルから）
+        $this->validate($request,Reservation::$rules);
+        $reservation = new Reservation;
+        $form = $request->all();
+        unset($form['_token']);
+        return redirect('reservation.complete');
+    }
 }
