@@ -45,18 +45,12 @@ Route::get('/masters',[MasterController::class,'index']);
 Route::get('/guests',[GuestController::class,'index']);
 
 //メニュー
-Route::get('/contents', [ContentController::class, 'index'])->name('index');
-Route::get('/contents/add', [ContentController::class, 'add'])->name('contents.add');
-Route::get('/contents/add/{content_id}', [ContentController::class, 'show']);
-Route::post('/contents/add',[ContentController::class,'create'])->name('contents.create');
-//予約確認ページ（ゲストと予約の情報）
+Route::get('/contents', [ContentController::class, 'index']);
+
 Route::get('/reservations',[ReservationController::class,'index']);
 
-//予約ページ（メニューから予約へ移動）
-// Route::get('/reservations/add',[ReservationController::class,'add'])->name('add');
-//middleware追加でログインすることを必須にする。（今はちょっと邪魔なのでコメントアウト）
-// ->middleware('auth');
-// Route::post('/reservations/add',[ReservationController::class,'create']);
+Route::get('reseervations/add',[ReservationController::class,'content_get'])->name('contentget');
+Route::post('reseervations/add',[ReservationController::class,'show']);
 
 Auth::routes();
 

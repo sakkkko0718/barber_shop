@@ -10,7 +10,8 @@
                 <th>メニュー</th>
                 <th>値段</th>
                 <th>目安施術時間</th>
-                {{-- <th>施術日</th> --}}
+                <th>施術日</th>
+                <th>開始時間</th>
             </tr>
             @foreach ($reservations as $reservation)
             <tr>
@@ -25,6 +26,8 @@
                 <td>{{$content->time}}</td>
                 @endforeach
                 
+                <td>{{$reservation->day}}</td>
+                <td>{{$reservation->startTime}}</td>
             </tr>
             @endforeach
             

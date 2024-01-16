@@ -1,8 +1,6 @@
 @extends('layouts.adminbase')
 
 @section('content')
-    <form action="/contents.add" method="post">
-        @csrf
         <div>以下よりお選びください</div>
         <table class="table table-striped">
                 <tr class="menu">
@@ -14,17 +12,20 @@
                 </tr>
             @foreach ($contents as $content)
                     <tr>
+                        <form action="reservation/add" method="post">
+                        {{-- <form action="/reservations/add" method="post"> --}}
                         <td>{{$content->content_id}}</td>
                         <td>{{$content->menu}}</td>
                         <td>{{$content->price}}円</td>
                         <td>{{$content->time}}</td>
                         <td>
-                        <a href="{{ route('contents.add', ['content_id' => $content->content_id]) }}">追加</a>
+                            @csrf
+                            <a href="{{ route('contentget', ['content_id' => $content->content_id]) }}" class="btn btn-secondary btn active" role="button" aria-pressed="true">追加</a>
+                        </form>
                         </td>
                     </tr>
             @endforeach
         </table>
-    </form>
 @endsection
 
 <style>

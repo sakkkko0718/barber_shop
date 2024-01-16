@@ -12,30 +12,17 @@ class ContentController extends Controller
         return view('contents/contents', ['contents' => $contents]);
     }
 
-    public function add(Request $request){
-        return view('contents.add');
-    }
+    // public function show(Request $request, $content_id){
+    //     $content = Content::find('content_id');
+    //     return view('reservations.add', ['content' => $content]);
+    // }
 
-    public function show(Request $request, $content_id){
-        // セッションにデータを保存
-        $request->session()->put('content_id', $content_id);
+    //sessionの設定（保存）
+    // public function content_put(Request $request){
+    //     $content = $request->input;
+    //     $request->session()->put('content',$content);
+    //     return redirect('reservations/add');
+    // }
+
     
-        // もしセッションにデータが存在すれば表示
-        if ($content_id) {
-            $contents = Content::where('content_id', $content_id)->get();
-            return view('contents.add', ['contents' => $contents]);
-        } else {
-            return redirect()->route('contents.add')->with('message', 'まだ追加していません');
-        }
-    }
-
-    public function showCart(Request $request){
-        //カート内のコンテンツを取得して表示
-        
-        //セッション内のデータを取得
-        $cartContents = session()->get('get',[]);
-
-        // データの保存が完了したらリダイレクト
-        return redirect()->route('contents.add');
-    }
 }
