@@ -11,11 +11,11 @@
             </tr>
             @foreach ($guests as $guest)
             <tr>
-                <td>{{$guest -> guest_id}}</td>
-                <td>{{$guest -> name}}</td>
-                <td>{{$guest -> address}}</td>
-                <td>{{$guest -> email}}</td>
-                <td>{{$guest -> tel}}</td>
+                <td>{{$guest->guest_id}}</td>
+                <td>{{$guest->name}}</td>
+                <td>{{$guest->address}}</td>
+                <td>{{$guest->email}}</td>
+                <td>{{$guest->tel}}</td>
             </tr>
             @endforeach
         </table>

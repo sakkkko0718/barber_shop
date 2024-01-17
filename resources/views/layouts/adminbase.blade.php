@@ -20,7 +20,7 @@
             <a class="nav-link" href="/contents">施術メニュー</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">アクセス</a>
+            <a class="nav-link" href="/access">アクセス</a>
           </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,3 +40,26 @@
     @yield('content')
   </div>
 </body>
+
+<style>
+      /* 予約画面のページ確認 */
+      .positionOfThePage {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .pageNow {
+        display: flex;
+        width: 100%;
+    }
+    .pageArrow {
+        top: 25%;
+        margin: 30px;
+    }
+    .pageNowDetail {
+        margin: 30px;
+        text-align: center;
+    }
+    .pageNowDetail p {
+      margin-top: 10px;
+    }
+</style>

@@ -49,7 +49,7 @@ class ReservationController extends Controller
             'startTime' => $request->input('startTime'),
         ]);
 
-        //content_idに基づいた値段と施術時間の取得
+        //content_idに基づいた値段と施術時間をContentモデルから取得
         $contentId = $request->input('content_id');
         $content = Content::find($contentId);
 

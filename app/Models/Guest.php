@@ -14,6 +14,14 @@ class Guest extends Model
 
     protected $fillable = ['guest_id','name','address','email','tel','created_at','updated_at'];
 
+    public static $rules = array (
+        'guest_id' => 'integer',
+        'name' => 'required',
+        'address' => 'required',
+        'email' => 'required',
+        'tel' => 'required',
+    );
+
     public function reservations(){
         return $this->hasMany('App\Models\Reservation','guest_id','guest_id');
     }

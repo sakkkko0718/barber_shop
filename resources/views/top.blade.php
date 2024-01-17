@@ -8,6 +8,11 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@100&display=swap" rel="stylesheet">
     <title>Ducati</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
@@ -88,6 +93,16 @@
       .bd-mode-toggle {
         z-index: 1500;
       }
+      .col-md-7 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+      .lead {
+        margin: 30px 0;
+      }
     </style>
 
     
@@ -157,22 +172,15 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/top">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contents">メニュー</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">予約</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">アクセス</a>
+            <a class="nav-link" href="">マイページ</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button type="button" class="btn btn-success">Search</button>
-      </div>
     </div>
   </nav>
 </header>
@@ -187,18 +195,17 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
         <div class="container">
           <div class="carousel-caption text-start">
-            <img src="/image/top4.jpg" alt="" height="90%" width="100%">
+            <img src="/image/top4.jpg" alt="" height="100%" width="100%">
             <h1>ようこそ、Ducatiへ！</h1>
             <p class="opacity-75">地元の皆さまに愛される理容室Ducatiで、あたたかい雰囲気とプロの技術で、あなたのスタイルを引き立てます。我々はただの理容室ではなく、地元ならではのアットホームな雰囲気で、お客様一人一人に心からのおもてなしを大切にしています。</p>
-            {{-- <p><a class="btn btn-lg" href="#" style="background-color: #D2691E;">Sign up today</a></p> --}}
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
           <rect width="100%" height="100%" style="fill: #FF7F50;"></rect>
         </svg>
         <div class="container">
@@ -211,12 +218,11 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="65vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>訪問サービス承ります！</h1>
             <p>当店はお客様のご自宅へ訪問し、快適な環境でカットさせていただくサービスを提供しています。<br>ご予約いただければ、専門の理容師がお客様の都合に合わせてお伺いいたします。</p>
-            <p><a class="btn btn-lg" href="#" style="background-color: #D2691E; color: white;">予約ページへ</a></p>
           </div>
         </div>
       </div>
@@ -239,7 +245,7 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row" style="text-align: center ; margin-top: 10vh">
+    <div class="row" style="text-align: center ; margin: 10vh 0">
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="/image/top7.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><title>地元らしいサービス</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <h2 class="fw-normal">カジュアルな雰囲気</h2>
@@ -253,7 +259,7 @@
         {{-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> --}}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="/image/top8.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <h2 class="fw-normal">コミュニティ参加</h2>
         <p>地元のイベントや地域のサポート活動にも積極的に参加。当店は地元に根ざした存在として、地域社会への貢献に努めています。</p>
         {{-- <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p> --}}
@@ -267,7 +273,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">手入れのしやすいスタイル<span class="text-body-secondary"></span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="font-family: 'Lobster', sans-serif;">手入れのしやすいスタイル<span class="text-body-secondary"></span></h2>
         <p class="lead">生活に合わせ、手入れがしやすく、毎日の生活にフィットするヘアスタイルをご提案します。</p>
       </div>
       <div class="col-md-5">
@@ -279,7 +285,7 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">丁寧なカウンセリング<span class="text-body-secondary"></span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="font-family: 'Lobster', sans-serif;">丁寧なカウンセリング<span class="text-body-secondary"></span></h2>
         <p class="lead">お客様のライフスタイルや好みに合わせた提案を心がけます。</p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -291,7 +297,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">訪問サービス<span class="text-body-secondary"></span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" style="font-family: 'Lobster', sans-serif;">訪問サービス<span class="text-body-secondary"></span></h2>
         <p class="lead">お身体の不自由な方のお家へ伺い、ご自宅でカットが可能です。（※別途、料金が発生いたします。お電話にて気軽にお問合せください）</p>
       </div>
       <div class="col-md-5">
