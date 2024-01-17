@@ -25,7 +25,6 @@
                 <td>{{$form->menu}}</td>
                 <td>{{number_format($form->price)}}円</td>
                 <td>{{$form->time}}</td>
-                {{-- 日付の追加→次のactionで中間テーブルへ保存 --}}
                 <td><input type="date" name="day" value="{{$form->day}}"></td>
                 <td>
                     <input type="time" step="1800" list="time-list" min="10:00" max="15:00" name="startTime" value="{{$form->startTime}}">

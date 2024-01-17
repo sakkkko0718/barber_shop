@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('reservation_id');
             $table->integer('content_id');
-            $table->integer('price');
-            $table->integer('time');
+            $table->string('price');
+            $table->string('time');
             $table->timestamps();
         });
     }

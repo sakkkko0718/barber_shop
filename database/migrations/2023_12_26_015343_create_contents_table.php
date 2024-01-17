@@ -15,7 +15,7 @@ return new class extends Migration
             $table->Increments('content_id');
             $table->integer('master_id');
             $table->string('menu');
-            $table->integer('price');
+            $table->string('price');
             $table->string('time');
             $table->timestamps();
         });

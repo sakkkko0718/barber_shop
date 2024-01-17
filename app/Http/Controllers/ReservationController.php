@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\ReservationContent;
 use App\Models\Content;
 use Illuminate\Http\Request;
 
@@ -41,9 +42,24 @@ class ReservationController extends Controller
     public function store(Request $request){
         //バリデーションルールの定義（モデルから）
         $this->validate($request,Reservation::$rules);
-        $reservation = new Reservation;
-        $form = $request->all();
-        unset($form['_token']);
-        return redirect('reservation.complete');
+        $reservation = Reservation::create([
+            //guestの設定（auth）がまだなのでとりあえず1で固定しておく
+            'guest_id' => 1,
+            'day' => $request->input('day'),
+            'startTime' => $request->input('startTime'),
+        ]);
+
+        //content_idに基づいた値段と施術時間の取得
+        $contentId = $request->input('content_id');
+        $content = Content::find($contentId);
+
+        //中間テーブルへ保存
+        //attach…モデル同士を結び付けるメソッド
+        $reservation->contents()->attach($content->content_id,[
+            'price' => $content->price,
+            'time' => $content->time,
+        ]);
+
+        return view('reservations.complete');
     }
 }

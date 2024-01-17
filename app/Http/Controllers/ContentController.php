@@ -11,18 +11,5 @@ class ContentController extends Controller
         $contents = Content::all();
         return view('contents/contents', ['contents' => $contents]);
     }
-
-    // public function show(Request $request, $content_id){
-    //     $content = Content::find('content_id');
-    //     return view('reservations.add', ['content' => $content]);
-    // }
-
-    //sessionの設定（保存）
-    // public function content_put(Request $request){
-    //     $content = $request->input;
-    //     $request->session()->put('content',$content);
-    //     return redirect('reservations/add');
-    // }
-
     
 }

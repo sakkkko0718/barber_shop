@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MastersTableSeeder::class);
         $this->call(ContentsTableSeeder::class);
         $this->call(GuestsTableSeeder::class);
-        $this->call(ReservationsTableSeeder::class);
+        // $this->call(ReservationsTableSeeder::class);
     }
 }
