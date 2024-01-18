@@ -11,17 +11,18 @@ class Reservation extends Model
     protected $table = 'reservations';
     protected $primaryKey = 'reservation_id';
 
-    protected $fillable = ['guest_id','day','startTime'];
+    protected $fillable = ['user_id','day','startTime'];
 
     public static $rules =array (
         'reservation_id' => 'integer',
-        'guest_id' => 'integer',
+        'user_id' => 'integer',
         'day' => 'required|date',
         'startTime' => 'required',
     );
 
-    public function guest(){
-        return $this->belongsTo('App\Models\Guest','guest_id','guest_id');
+    //GuestモデルからUserモデルに変更
+    public function user(){
+        return $this->belongsTo('App\Models\User','user_id','user_id');
     }
 
     public function contents(){

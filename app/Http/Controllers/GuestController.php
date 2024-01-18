@@ -20,8 +20,8 @@ class GuestController extends Controller
         $this->validate($request,Guest::$rules);
         $guest = new Guest();
         $guest->fill($request->all())->save();
-        //今はguestページにリダイレクト
-        return redirect('guest');
+        //アラートが起動した後にトップページへ戻る
+        return redirect('/top')->with('message','新規登録が完了しました');
     }
 
 }

@@ -22,6 +22,10 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      body {
+        background-color: #FFF6E9;
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -126,42 +130,6 @@
       </symbol>
     </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    
 <header data-bs-theme="white">
   <<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #B22222;">
     <div class="container-fluid">
@@ -178,12 +146,31 @@
             <a class="nav-link" href="/contents">メニュー</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">マイページ</a>
+            <a class="nav-link" href="#access">アクセス</a>
+          </li>
+        </ul>
+        <ul  class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/login">マイページ</a>
+          </li>
+          <section class="nav-link active"> / </section>
+          <li>
+            <a class="nav-link active" aria-current="page" href="{{route('admin.login')}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+              <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+            </svg></a>
           </li>
         </ul>
     </div>
   </nav>
 </header>
+
+{{-- 新規登録が完了した時のみ表示 --}}
+@if(session('message'))
+<script>
+  alert("{{ session('message') }}");
+</script>
+@endif
+{{-- 新規登録が完了した時のみ表示 --}}
 
 <main>
 
@@ -298,7 +285,7 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1" style="font-family: 'Lobster', sans-serif;">訪問サービス<span class="text-body-secondary"></span></h2>
-        <p class="lead">お身体の不自由な方のお家へ伺い、ご自宅でカットが可能です。（※別途、料金が発生いたします。お電話にて気軽にお問合せください）</p>
+        <p class="lead">お身体の不自由な方のお家へ伺い、ご自宅でカットが可能です。<br>（※別途、料金が発生いたします。お電話のみの受付です。気軽にお問合せください）</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Image</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><image href="/image/top3.jpg" alt="" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
@@ -312,9 +299,11 @@
     <section class="top1" id="access">
       <div class="container">
           <h3>Access</h3>
-          <p>【住所】〒630-1234 奈良県奇跡市花見町1-2-3
-          <p>【アクセス】<br>
-              最寄り駅: 奇跡駅（南へ徒歩10分、花見通り沿いに進みます。）
+          <p>【住所】〒630-1234 奈良県奇跡市花見町1-2-3</p>
+          <p>【電話番号】0745-12-3456</p>
+          <p>【アクセス】
+              最寄り駅: 奇跡駅（南へ徒歩10分、花見通り沿いに進みます。）</p>
+          <p>【駐車場】無料:1台</p>
       </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105056.623701192!2d135.78701026203626!3d34.62894774406043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600137c578a70cc1%3A0x4afed9b0b9492622!2z5aWI6Imv55yM5aWI6Imv5biC!5e0!3m2!1sja!2sjp!4v1704860280230!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <div class="container marketing">
@@ -330,6 +319,7 @@
     <p>&copy; 2017–2023 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+</script>
 </body>
 </html>

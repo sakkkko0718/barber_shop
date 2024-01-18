@@ -17,8 +17,8 @@
             <tr>
                 <td>{{$reservation->id}}</td>
                 <td>{{$reservation->reservation_id}}</td>
-                <td>{{$reservation->guest_id}}</td>
-                <td>{{$reservation->guest->name}}</td>
+                <td>{{$reservation->user_id}}</td>
+                <td>{{$reservation->user->name}}</td>
 
                 @foreach($reservation->contents as $content)
                 <td>{{$content->menu}}</td>

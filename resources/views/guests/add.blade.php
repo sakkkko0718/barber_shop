@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('content')
-<form action="/guest/add" method="post">
+<form action="{{route('guestCreate')}}" method="post">
         <table>
             @csrf
             <tr><th>お名前：</th><td><input type="text" name="name"></td></tr>

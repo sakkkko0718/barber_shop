@@ -20,7 +20,8 @@
             <a class="nav-link" href="/contents">施術メニュー</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/access">アクセス</a>
+            {{-- トップページの末尾へ移動 --}}
+            <a class="nav-link" href="/top#access">アクセス</a>
           </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

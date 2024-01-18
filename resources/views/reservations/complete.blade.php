@@ -43,7 +43,7 @@
     {{-- <h6>【 {{$user}}様 】</h6> --}}
     {{-- <h6>【 予約受付番号：{{$reservation_id}} 】</h6> --}}
     <p>予約の内容はマイページより確認していただけます。<br>キャンセルは前日までにお願いします。当日のキャンセルはお電話にてお願いします。</p>
-    <a href="" class="btn btn-secondary btn active" role="button" aria-pressed="true">マイページ</a>
+    <a href="/login" class="btn btn-secondary btn active" role="button" aria-pressed="true">マイページ</a>
 </div>
 @endsection
 

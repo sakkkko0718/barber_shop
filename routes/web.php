@@ -9,6 +9,10 @@ use App\Models\Content;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
+//管理者用ログインのuse宣言
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminRegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,11 +52,12 @@ Route::get('/masters',[MasterController::class,'index']);
 
 Route::get('/guests',[GuestController::class,'index']);
 Route::get('/guests/add',[GuestController::class,'add']);
-Route::post('/guests/add',[GuestController::class,'create']);
+Route::post('/guests/add',[GuestController::class,'create'])->name('guestCreate');
 
 //メニュー
 Route::get('/contents', [ContentController::class, 'index'])->name('index');
 Route::get('/reservations',[ReservationController::class,'index']);
+//ログインしないと進めない（はず）
 Route::get('reservations/add/{content_id}',[ReservationController::class,'content_get'])->name('contentget');
 Route::post('reservations/add',[ReservationController::class,'show']);
 Route::get('reservations/add',[ReservationController::class,'add']);
@@ -62,3 +67,20 @@ Auth::routes();
 
 //ログイン機能
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// 管理者用ログインルーティング
+Route::group(['prefix' => 'admin'],function(){
+    //登録
+    Route::get('register',[AdminRegisterController::class,'create'])->name('admin.register');
+    Route::post('register',[AdminRegisterController::class,'store']);
+
+    //ログイン
+    Route::get('login',[AdminLoginController::class,'showLoginPage'])->name('admin.login');
+    Route::post('login',[AdminLoginController::class,'login']);
+
+    //以下の中は認証必須のエンドポイントとなる
+    Route::middleware(['auth:admin'])->group(function(){
+        //ダッシュボード
+        Route::get('dashboard',fn() => view('admin.dashboard'))->name('admin.dashboard');
+    });
+});

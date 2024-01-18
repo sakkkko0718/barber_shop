@@ -35,11 +35,21 @@ return [
     |
     */
 
+    //認証機能を提供。複数の指定が可能。認証する対象を１から２に変更。
+    //driver…どのように認証した情報を管理するか。sessionはスタンダードな設定
+    //provider…どのような仕組みでどの認証対象を認証するか。
     'guards' => [
+        //既存（利用者用ログインとする）
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        //マルチログイン実装時追加（管理者用ログイン）
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ]
     ],
 
     /*
@@ -59,11 +69,18 @@ return [
     |
     */
 
+    //既存（利用者用とする）
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        //追加（管理者用）
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

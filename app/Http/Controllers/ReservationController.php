@@ -6,6 +6,7 @@ use App\Models\Reservation;
 use App\Models\ReservationContent;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -43,8 +44,8 @@ class ReservationController extends Controller
         //バリデーションルールの定義（モデルから）
         $this->validate($request,Reservation::$rules);
         $reservation = Reservation::create([
-            //guestの設定（auth）がまだなのでとりあえず1で固定しておく
-            'guest_id' => 1,
+            //Authのユーザーからidを取得
+            'user_id' => Auth::user()->user_id,
             'day' => $request->input('day'),
             'startTime' => $request->input('startTime'),
         ]);

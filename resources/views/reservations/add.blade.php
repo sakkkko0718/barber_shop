@@ -43,11 +43,13 @@
 <div class="container">
     <h2>予約画面</h2>
     <h6>※まだ予約は完了しておりません</h6>
+    <br>
 
 <form action="{{route('reservationsStore')}}" method="post">
     <table class="table table-striped">
         <tr>
             <th></th>
+            <th>ご予約者名</th>
             <th>メニュー</th>
             <th>値段</th>
             <th>目安施術時間</th>
@@ -60,7 +62,8 @@
             @csrf
             <input type="hidden" name="content_id" value="{{$form->content_id}}">
             @if($form != null)
-                <td>{{$form->content_id}}</td>
+            <td></td>
+                <td>{{Auth::user()->name}}</td>
                 <td>{{$form->menu}}</td>
                 <td>{{number_format($form->price)}}円</td>
                 <td>{{$form->time}}</td>
