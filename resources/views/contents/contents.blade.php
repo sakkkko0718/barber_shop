@@ -2,7 +2,7 @@
 
 @section('content')
         <div>以下よりお選びください</div>
-        <table class="table table-striped">
+        <table class="table-striped table">
                 <tr class="menu">
                     <th></th>
                     <th>メニュー</th>
@@ -32,5 +32,12 @@
     .menu th {
         font-size: 18px;
         height: 5vh;
+    }
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #dbb875;
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        background-color: #ffffff;
     }
 </style>

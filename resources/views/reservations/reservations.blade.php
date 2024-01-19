@@ -22,7 +22,7 @@
 
                 @foreach($reservation->contents as $content)
                 <td>{{$content->menu}}</td>
-                <td>{{$content->price}}円</td>
+                <td>{{number_format($content->price)}}円</td>
                 <td>{{$content->time}}</td>
                 @endforeach
                 

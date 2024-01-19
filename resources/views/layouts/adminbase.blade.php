@@ -5,32 +5,32 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg" style="background-color: #6f2f38;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/top">Ducati</a>
+      <a class="navbar-brand" style="color: #cdc984;" href="/top">Ducati</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/top">トップ</a>
+            <a class="nav-link active" aria-current="page" style="color: #ffffff;" href="/top">トップ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contents">施術メニュー</a>
+            <a class="nav-link" style="color: #ffffff;" href="/contents">施術メニュー</a>
           </li>
           <li class="nav-item">
             {{-- トップページの末尾へ移動 --}}
-            <a class="nav-link" href="/top#access">アクセス</a>
+            <a class="nav-link" style="color: #ffffff;" href="/top#access">アクセス</a>
           </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown link
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="/top">トップ</a></li>
+              <li><a class="dropdown-item" href="/contents">施術メニュー</a></li>
+              <li><a class="dropdown-item" href="/top#access">アクセス</a></li>
             </ul>
           </li> --}}
         </ul>
@@ -62,5 +62,9 @@
     }
     .pageNowDetail p {
       margin-top: 10px;
+    }
+
+    .content {
+      font: #242022;
     }
 </style>

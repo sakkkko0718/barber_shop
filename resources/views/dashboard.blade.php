@@ -16,13 +16,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{-- 予約した履歴が見られる --}}
+                    {{-- 予約した履歴が見られるようにしたい --}}
                     <table>
-                        {{-- @foreach ($datas as $data)
-                        <tr><th>施術日：</th><td>{{$data->day}}</td></tr>
-                        <tr><th>開始時間：</th><td>{{$data->time}}</td></tr>
-                        <tr><th>予約内容：</th><td>{{$data->menu}}</td></tr>
-                        @endforeach --}}
+                        <tr><th>名前：</th><td>{{Auth::user()->name}}</td></tr>
+                        <tr><th>施術日：</th><td></td></tr>
+                        <tr><th>内容：</th><td></td></tr>
+                        <tr><th>お支払い：</th><td></td></tr>
                     </table>
                 </div>
             </div>

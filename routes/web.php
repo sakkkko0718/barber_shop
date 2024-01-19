@@ -57,8 +57,8 @@ Route::post('/guests/add',[GuestController::class,'create'])->name('guestCreate'
 //メニュー
 Route::get('/contents', [ContentController::class, 'index'])->name('index');
 Route::get('/reservations',[ReservationController::class,'index']);
-//ログインしないと進めない（はず）
-Route::get('reservations/add/{content_id}',[ReservationController::class,'content_get'])->name('contentget');
+//ミドルウェアを使ってログインを必須の状態にする→ログインが完了すると自動的に予約画面にいく
+Route::get('reservations/add/{content_id}',[ReservationController::class,'content_get'])->middleware('auth')->name('contentget');
 Route::post('reservations/add',[ReservationController::class,'show']);
 Route::get('reservations/add',[ReservationController::class,'add']);
 Route::post('reservations/complete',[ReservationController::class,'store'])->name('reservationsStore');
@@ -68,19 +68,24 @@ Auth::routes();
 //ログイン機能
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// 管理者用ログインルーティング
-Route::group(['prefix' => 'admin'],function(){
-    //登録
-    Route::get('register',[AdminRegisterController::class,'create'])->name('admin.register');
-    Route::post('register',[AdminRegisterController::class,'store']);
+Route::group(['prefix' => 'admin'], function () {
+    // 登録
+    Route::get('register', [AdminRegisterController::class, 'create'])
+        ->name('admin.register');
 
-    //ログイン
-    Route::get('login',[AdminLoginController::class,'showLoginPage'])->name('admin.login');
-    Route::post('login',[AdminLoginController::class,'login']);
+    Route::post('register', [AdminRegisterController::class, 'store']);
 
-    //以下の中は認証必須のエンドポイントとなる
-    Route::middleware(['auth:admin'])->group(function(){
-        //ダッシュボード
-        Route::get('dashboard',fn() => view('admin.dashboard'))->name('admin.dashboard');
+    // ログイン
+    Route::get('login', [AdminLoginController::class, 'showLoginPage'])
+        ->name('admin.login');
+
+    Route::post('login', [AdminLoginController::class, 'login']);
+
+    // 以下の中は認証必須のエンドポイントとなる
+    Route::middleware(['auth:admin'])->group(function () {
+        // ダッシュボード
+        // ログインしないとみられない設定（middleware）
+        Route::get('dashboard', fn() => view('admin.dashboard'))
+            ->name('admin.dashboard');
     });
 });
