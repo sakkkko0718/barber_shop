@@ -5,6 +5,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UserController;
 use App\Models\Content;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
@@ -24,13 +25,17 @@ use App\Http\Controllers\Admin\AdminRegisterController;
 |
 */
 
+//いきなりトップページへ飛べるようにする
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//投稿一覧を取得して表示
+Route::get('/dashboard',[UserController::class,'index'])->middleware(['auth','verified'])->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -81,10 +86,9 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('login', [AdminLoginController::class, 'login']);
 
-    // 以下の中は認証必須のエンドポイントとなる
+    // 認証が必要なエンドポイント
     Route::middleware(['auth:admin'])->group(function () {
-        // ダッシュボード
-        // ログインしないとみられない設定（middleware）
+        // ダッシュボード表示
         Route::get('dashboard', fn() => view('admin.dashboard'))
             ->name('admin.dashboard');
     });
