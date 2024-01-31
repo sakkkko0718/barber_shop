@@ -14,15 +14,45 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {{-- ここから施術日で検索 --}}
+            <div class="mypage-search">
+                <div class="d-flex justify-content-center">
+                    <p>施術日の検索</p>
+                    <form action="{{route('dashboard.search')}}" method="get">
+                        @csrf
+                        <input type="date" name="from" style="width: 150px">
+                        <span>～</span>
+                        <input type="date" name="until" style="width: 150px">
+                        <input type="submit" class="btn btn-secondary btn active" value="検索" style="border: #595959 solid 1px; padding: 8px; margin: 10px;">
+                    </form>
+                </div>
+            </div>
+            {{-- 施術日で検索ここまで --}}
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{-- 予約した履歴が見られるようにしたい --}}
-                    <table>
-                        <tr><th>名前：</th><td>{{Auth::user()->name}}</td></tr>
-                        <tr><th>施術日：</th><td></td></tr>
-                        <tr><th>内容：</th><td></td></tr>
-                        <tr><th>お支払い：</th><td></td></tr>
+                <div class="text-gray-900">
+                    @foreach ($user->reservations as $key=>$item)
+                    <table class="mx-auto">
+                            <td class="number">{{$key+1}}</td><td>ご予約日：{{($item->created_at)->format('Y年m月d日')}}</td>
+                            {{-- ここからcontent --}}
+                            @foreach($item->contents as $content)
+                            <tr><th>メニュー</th><td>{{$content->menu}}</td></tr>
+                            <tr><th>支払い予定金額</th><td>{{number_format($content->price)}}円</td></tr>
+                            @endforeach
+                            {{-- contentここまで --}}
+                            {{-- Carbonを利用して文字列を日付型にする --}}
+                            <tr><th>施術日</th><td>{{\Carbon\Carbon::parse($item->day)->format('Y年m月d日')}}</td></tr>
+                            {{-- 上記と同じ、文字列を時間にする --}}
+                            <tr><th>開始時間</th><td>{{\Carbon\Carbon::parse($item->startTime)->format('H時i分')}}</td></tr>
+                            <tr>
+                                <form action="{{route('dashboard.del', ['reservation_id' => $item->reservation_id])}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <th style="color: red">この内容をキャンセルする</th>
+                                <td><button type="submit">はい</button></td>
+                            </tr>
                     </table>
+                    @endforeach
+                    </form>
                 </div>
             </div>
         </div>
@@ -30,14 +60,52 @@
 </x-app-layout>
 
 <style>
-    .mypage-button {
-        margin-top: 20px;
-    }
     .guest-name {
         margin: 10px 0;
         display: flex;
     }
     .guest-name p {
         margin: 0 10px;
+    }
+    .mypage-title {
+        width: 500px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 25px;
+        letter-spacing: 0.12em;
+        background-color: black;
+        color: #ffffff;
+        text-align: center;
+    }
+    table,tr,th {
+        border: 1px solid #595959;
+        border-collapse: collapse;
+    }
+    table {
+        margin: 10px 0;
+        width: 500px ;
+        height: 100px;
+    }
+    th {
+        width: 200px;
+    }
+    td {
+        width: 300px ;
+        text-align: center;
+    }
+    th,td {
+        height: 50px;
+    }
+    .reserve-number {
+        text-align: center;
+    }
+    .number {
+        color: #ffffff;
+        border: #595959 solid 1px;
+        background-color: gray;
+    }
+    .mypage-search {
+        width: 500px;
+        margin: 10px 0;
     }
 </style>

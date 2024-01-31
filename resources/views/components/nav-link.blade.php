@@ -7,5 +7,13 @@ $classes = ($active ?? false)
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
+    マイページ
+</a>
+
+<a href="/top" {{ $attributes->merge(['class' => $classes]) }}>
+    トップページ
+</a>
+
+<a href="/contents" {{ $attributes->merge(['class' => $classes]) }}>
+    メニュー
 </a>

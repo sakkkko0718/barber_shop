@@ -7,6 +7,7 @@
                 <th>予約ID</th>
                 <th>ゲストID</th>
                 <th>お名前</th>
+                <th>電話番号</th>
                 <th>メニュー</th>
                 <th>値段</th>
                 <th>目安施術時間</th>
@@ -19,6 +20,7 @@
                 <td>{{$reservation->reservation_id}}</td>
                 <td>{{$reservation->user_id}}</td>
                 <td>{{$reservation->user->name}}</td>
+                <td>{{$reservation->user->tel}}</td>
 
                 @foreach($reservation->contents as $content)
                 <td>{{$content->menu}}</td>

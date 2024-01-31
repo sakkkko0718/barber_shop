@@ -18,3 +18,4 @@ class Content extends Model
         return $this->belongsTo('App\Models\Master','master_id','master_id');
     }
 }
+

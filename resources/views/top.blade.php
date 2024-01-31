@@ -174,51 +174,23 @@
 
 <main>
 
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <img src="/image/top4.jpg" alt="" height="100%" width="100%">
-            <h1>ようこそ、Ducatiへ！</h1>
-            <p class="opacity-75">地元の皆さまに愛される理容室Ducatiで、あたたかい雰囲気とプロの技術で、あなたのスタイルを引き立てます。我々はただの理容室ではなく、地元ならではのアットホームな雰囲気で、お客様一人一人に心からのおもてなしを大切にしています。</p>
-          </div>
-        </div>
+        <img src="/image/top10.jpg" class="d-block w-100" alt="top1">
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="100%" style="fill: #FF7F50;"></rect>
-        </svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <img src="/image/top5.jpg" alt="" height="100%" width="100%" style="object-fit: cover">
-            <h1>美髪への第一歩！</h1>
-            <p>髪の健康をサポートする理容専売のシャンプーと、スタイリング剤で、日常のお手入れを格上げしませんか？</p>
-            <p><a class="btn btn-lg" href="#" style="background-color: #D2691E; color: white;">商品のご案内</a></p>
-          </div>
-        </div>
+        <img src="/image/top5.jpg" class="d-block w-100" alt="top2">
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill: #FF7F50;"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>訪問サービス承ります！</h1>
-            <p>当店はお客様のご自宅へ訪問し、快適な環境でカットさせていただくサービスを提供しています。<br>ご予約いただければ、専門の理容師がお客様の都合に合わせてお伺いいたします。</p>
-          </div>
-        </div>
+        <img src="/image/top9.jpg" class="d-block w-100" alt="top3">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
@@ -304,6 +276,7 @@
           <p>【アクセス】
               最寄り駅: 奇跡駅（南へ徒歩10分、花見通り沿いに進みます。）</p>
           <p>【駐車場】無料:1台</p>
+          <p>ああ</p>
       </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105056.623701192!2d135.78701026203626!3d34.62894774406043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600137c578a70cc1%3A0x4afed9b0b9492622!2z5aWI6Imv55yM5aWI6Imv5biC!5e0!3m2!1sja!2sjp!4v1704860280230!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <div class="container marketing">

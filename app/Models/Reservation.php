@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reservation extends Model
 {
@@ -13,10 +14,10 @@ class Reservation extends Model
 
     protected $fillable = ['user_id','day','startTime'];
 
-    public static $rules =array (
+    public static $rules = array (
         'reservation_id' => 'integer',
         'user_id' => 'integer',
-        'day' => 'required|date',
+        'day' => 'date|after:today',
         'startTime' => 'required',
     );
 
@@ -30,4 +31,7 @@ class Reservation extends Model
         ->using('App\Models\ReservationContent')
         ->withPivot('price','time');
     }
+
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
 }

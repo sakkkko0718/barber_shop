@@ -41,6 +41,7 @@ class ReservationController extends Controller
 
     // DBへ保存処理
     public function store(Request $request){
+
         //バリデーションルールの定義（モデルから）
         $this->validate($request,Reservation::$rules);
         $reservation = Reservation::create([
