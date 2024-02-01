@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -57,3 +58,14 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
+
+// 以下よりマイページに追加
+
+
+// 検索機能
+Route::get('dashboard/search', [UserController::class, 'search'])->name('dashboard.search');
+        
+// 削除機能
+Route::delete('dashboard/del/{reservation_id}', [UserController::class, 'del'])->name('dashboard.del');
+
