@@ -6,7 +6,6 @@ use App\Models\Reservation;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use illuminate\Database\Eloquent\SoftDeletes;
 
 class UserController extends Controller
 {
