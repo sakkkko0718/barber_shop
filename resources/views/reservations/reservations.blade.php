@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('content')
-        <table  class="table table-striped">
+        <table  class="table-striped table">
             <tr class="menu">
                 <th></th>
                 <th>予約ID</th>
