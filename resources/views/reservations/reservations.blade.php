@@ -25,7 +25,7 @@
                 <td>{{$reservation->user->tel}}</td>
                 @else
                 <td style="color: red">キャンセルされました</td>
-                <td></td>
+                <td style="color: red">キャンセルされました</td>
                 @endif
 
                 @foreach($reservation->contents as $content)
