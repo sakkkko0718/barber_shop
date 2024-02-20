@@ -59,6 +59,7 @@
   .tbl-r04 td{
     display: block;
     width: 100%;
+    padding: 5px;
     position: relative;
   }
   .tbl-r04 td:first-child:before {
@@ -76,6 +77,7 @@
   }
   .tbl-r04 tr {
     margin-bottom: 40px;
+    border: solid black 1px;
   }
 }
 </style>
