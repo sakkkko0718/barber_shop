@@ -19,8 +19,14 @@
                 <td>{{$reservation->id}}</td>
                 <td>{{$reservation->reservation_id}}</td>
                 <td>{{$reservation->user_id}}</td>
+
+                @if($reservation->user)
                 <td>{{$reservation->user->name}}</td>
                 <td>{{$reservation->user->tel}}</td>
+                @else
+                <td></td>
+                <td></td>
+                @endif
 
                 @foreach($reservation->contents as $content)
                 <td>{{$content->menu}}</td>
