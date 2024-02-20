@@ -1,7 +1,7 @@
 @extends('layouts.adminbase')
 
 @section('content')
-        <table  class="tbl-r04">
+        <table  class="table-striped table">
             <tr class="thead">
                 <th></th>
                 <th>予約ID</th>
@@ -49,20 +49,20 @@
     }
 
     @media screen and (max-width: 640px) {
-  .tbl-r04 {
+  .table-striped table {
     width: 80%;
   } 
-  .tbl-r04 .thead {
+  .table-striped .thead {
     display: none;
   }
-  .tbl-r04 tr,
-  .tbl-r04 td{
+  .table-striped tr,
+  .table-striped td{
     display: block;
     width: 100%;
     padding: 5px;
     position: relative;
   }
-  .tbl-r04 td:first-child:before {
+  .table-striped td:first-child:before {
     background: #e9727e;
     box-sizing: border-box;
     color: #fff;
@@ -75,9 +75,8 @@
     display: block;
     width: 100.5%;
   }
-  .tbl-r04 tr {
+  .table-striped tr {
     margin-bottom: 40px;
-    border: solid black 1px;
   }
 }
 </style>
