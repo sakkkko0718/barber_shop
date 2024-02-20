@@ -24,7 +24,7 @@
                 <td>{{$reservation->user->name}}</td>
                 <td>{{$reservation->user->tel}}</td>
                 @else
-                <td></td>
+                <td style="color: red">キャンセルされました</td>
                 <td></td>
                 @endif
 
